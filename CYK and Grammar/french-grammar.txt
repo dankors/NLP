@@ -1,0 +1,60 @@
+N-M-sg -> 'chat' | 'livre' | 'poisson'
+N-M-pl -> 'chats' | 'livres' | 'poissons'
+N-F-sg -> 'télévision' | 'semaine' | 'fleur' | 'plante'
+N-F-pl -> 'télévisions' | 'semaines' | 'fleurs' | 'plantes'
+
+PR-1sg -> 'je'
+PR-2sg -> 'tu'
+PR-3sg -> 'il' | 'elle'
+PR-1pl -> 'nous'
+PR-2pl -> 'vous'
+PR-3pl -> 'ils' | 'elles'
+
+V-13sg -> 'mange' | 'regarde' | 'parle'
+V-2sg -> 'manges' | 'regardes' | 'parles'
+V-1pl -> 'mangeons' | 'regardons' | 'parlons'
+V-2pl -> 'mangez' | 'regardez' | 'parlez'
+V-3pl -> 'mangent' | 'regardent' | 'parlent'
+
+NEGne -> 'ne'
+NEGpas -> 'pas'
+
+DT-M -> 'le'
+DT-F -> 'la'
+DT-pl -> 'les'
+DOP -> 'le' | 'la' | 'les'
+
+PN-DT -> 'Canada' | 'France' | 'Finlande'
+PN -> 'Daniel' | 'Montréal' | 'Jupiter'
+
+A-M-sg-posN -> 'noir' | 'amusant' | 'heureux' 
+A-M-pl-posN -> 'noirs' | 'amusants' | 'heureux'
+A-F-sg-posN -> 'noire' | 'amusante' | 'heureuse'
+A-F-pl-posN -> 'noires' | 'amusantes' | 'heureuses'
+A-M-sg-preN -> 'gros' | 'beau' | 'joli'
+A-F-sg-prepostN -> 'dernière' | 'prochaine' | 'propre'
+
+
+S -> NP-13sg VP-13sg | PR-1pl VP-1pl | PR-2sg VP-2sg | PR-2pl VP-2pl | NP-3pl VP-3pl
+
+NP-M -> DT-M A-M-sg-preN N-M-sg | DT-M N-M-sg A-M-sg-posN | DT-M N-M-sg | DT-M PN-DT | PN
+NP-F -> DT-F N-F-sg A-F-sg-posN | DT-F A-F-sg-prepostN N-F-sg | DT-F N-F-sg A-F-sg-prepostN | DT-F N-F-sg
+NP-pl -> DT-pl N-M-pl A-M-pl-posN | DT-pl N-F-pl A-F-pl-posN | DT-pl N-F-pl | DT-pl N-M-pl
+NP -> NP-M | NP-F | NP-pl
+
+NP-13sg -> NP-M | NP-F | PR-1sg | PR-3sg
+NP-3pl -> NP-pl | PR-3pl
+
+PR -> PR-1sg | PR-2sg | PR-3sg | PR-1pl | PR-2pl | PR-3pl
+
+VP-13sg -> V-13sg NP | DOP V-13sg | VPneg-13sg NP
+VP-2sg -> V-2sg NP | DOP V-2sg | VPneg-2sg NP 
+VP-1pl -> V-1pl NP | DOP V-1pl | VPneg-1pl NP
+VP-2pl -> V-2pl NP | DOP V-2pl | VPneg-2pl NP
+VP-3pl -> V-3pl NP | DOP V-3pl | VPneg-3pl NP 
+
+VPneg-13sg -> NEGne V-13sg NEGpas
+VPneg-2sg -> NEGne V-2sg NEGpas
+VPneg-1pl -> NEGne V-1pl NEGpas
+VPneg-2pl -> NEGne V-2pl NEGpas
+VPneg-3pl -> NEGne V-3pl NEGpas
